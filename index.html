@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Modern Furniture Collection</title>
+  <meta name="description" content="Explore our modern furniture collection — chairs, sofas, lighting, decor and more." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./forniture.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <img src="images/furniture logo 2.png" alt="Logo" class="logo" />
+        <span class="brand-name">FurniHouse</span>
+      </div>
+
+      <nav class="nav" id="mainNav">
+        <ul>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="btn icon" id="searchBtn" aria-label="Search">🔍</button>
+        <button class="btn icon" id="cartBtn" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
+        <button class="btn primary" id="signupBtn">Sign Up</button>
+        <button class="btn burger" id="burger" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-left">
+        <p class="eyebrow">The Best Online Furniture Store</p>
+        <h1>Explore Our Modern Furniture Collection</h1>
+        <p class="lead">Stylish, comfortable, and built to last — discover curated pieces for every room in your home.</p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn primary">Shop Now</a>
+          <a href="#collections" class="btn ghost">View Collections</a>
+        </div>
+
+        <div class="trust row">
+          <div class="trust-item">🚚 Free Shipping</div>
+          <div class="trust-item">🔁 Easy Returns</div>
+          <div class="trust-item">💬 24/7 Support</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Use your uploaded image here: images/hero-furniture.png -->
+        <img src="images/living room furniture.jpeg" alt="Living room furniture" id="heroImage" />
+      </div>
+    </section>
+
+    <!-- Categories / Collections -->
+    <section id="collections" class="container collections">
+      <h2>Our Product Collections</h2>
+      <div class="collection-cards">
+        <div class="card small">
+          <img src="images/oark bar stole.jpeg" alt="Chairs" onerror="this.style.visibility='hidden'"/>
+          <h3>Chairs</h3>
+          <p>Comfortable seating for every corner.</p>
+        </div>
+        <div class="card small">
+          <img src="images/Clean lines, cozy cushions..jpeg" alt="Sofas" onerror="this.style.visibility='hidden'"/>
+          <h3>Sofas</h3>
+          <p>Clean lines, cozy cushions.</p>
+        </div>
+        <div class="card small">
+          <img src="images/Statement lights to transform rooms..jpeg" alt="Lighting" onerror="this.style.visibility='hidden'"/>
+          <h3>Lighting</h3>
+          <p>Statement lights to transform rooms.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="container products-section">
+      <div class="products-header">
+        <h2>Featured Products</h2>
+        <div class="controls">
+          <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products" />
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="">All categories</option>
+            <option value="Chairs">Chairs</option>
+            <option value="Sofas">Sofas</option>
+            <option value="Lighting">Lighting</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="productsGrid" class="products-grid">
+        <!-- Product cards injected by JavaScript -->
+      </div>
+
+      <div class="load-more-wrap">
+        <button id="loadMore" class="btn ghost">Load More</button>
+      </div>
+    </section>
+
+    <!-- About / Footer CTA -->
+    <section id="about" class="container about">
+      <h2>Why choose FurniHouse?</h2>
+      <p>We source durable materials, design with function in mind, and deliver modern style at accessible prices.</p>
+    </section>
+  </main>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="" />
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p id="modalCategory" class="muted"></p>
+          <p id="modalPrice" class="price"></p>
+          <p id="modalDescription"></p>
+          <div class="modal-actions">
+            <input type="number" id="modalQty" value="1" min="1" />
+            <button id="addToCartBtn" class="btn primary">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" class="btn icon" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+      <p class="muted">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button id="checkoutBtn" class="btn primary">Checkout</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> FurniHouse — Modern Furniture Collection.</p>
+      <p class="muted">Contact: support@furnihouse.example</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="./fornture.js"></script>
+</body>
+</html>
